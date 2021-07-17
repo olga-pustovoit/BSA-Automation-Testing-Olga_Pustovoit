@@ -1,0 +1,20 @@
+const LoginPageLocator = {
+    userEmail: 'input[name="email"]',
+    password: 'input[name="password"]',
+    button: 'button'
+};
+
+const LoginPageLibs = {
+    Login: async (username, password) => {
+        await browser.setWindowSize(1440, 960);
+        await browser.url('/sign-in');
+        let name_ele = await browser.$(LoginPageLocator.userEmail);
+        await name_ele.setValue(username);
+        let password_ele = await browser.$(LoginPageLocator.password);
+        await password_ele.setValue(password);
+        let sumbit = await browser.$(LoginPageLocator.button)
+        return sumbit.click();
+    }
+}
+
+exports.LoginPage = { LoginPageLocator, LoginPageLibs };
