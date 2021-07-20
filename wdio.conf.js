@@ -149,6 +149,10 @@ exports.config = {
     ui: 'bdd',
     timeout: 600000,
   },
+
+  jasmineOpts: {
+    defaultTimeoutInterval: (24 * 60 * 60 * 1000)
+  },
   //
   // =====
   // Hooks
